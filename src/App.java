@@ -1,4 +1,5 @@
 import model.Product;
+import model.Category;
 
 public class App {
     public static void main(String[] args) throws Exception {
@@ -82,6 +83,14 @@ public class App {
 
         System.out.println("So san pham: " + Product.getTotalProducts());
         System.out.println("Tong doanh thu: " + Product.getTotalRevenue());
+
+
+        Category category = new Category("Quan ao");
+        
+        category.addProduct(p1);
+        p1.setCategory(category);
+
+        System.out.println(p1.category.getCategoryName());
     
     }
 }

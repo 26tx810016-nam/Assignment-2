@@ -1,7 +1,7 @@
 package model;
 
 import util.ProductValidator;
-    // Nếu một sản phẩm bị “huỷ”, totalProducts không nên giảm để quản lí tổng số lượng sản phẩm
+    // Nếu một sản phẩm bị huỷ, totalProducts không nên giảm để quản lí tổng số lượng sản phẩm
     // Phương thức discontinue() sẽ quản lí sản phẩm bằng cách ẩn đi thay vì xóa.
 
 public class Product {
@@ -10,6 +10,8 @@ public class Product {
     private double price;
     private int quantity;
     private boolean isDiscontinue;
+
+    public Category category;
 
     private static int counter = 1;
     private static int totalProducts = 0;
@@ -120,6 +122,7 @@ public class Product {
             " - " + this.productCode + 
             ". Giá bán: " + this.price +
             "Số lượng trong kho: " + this.quantity
+            + "The loai: " + this.category
         );
     }
 
@@ -145,5 +148,9 @@ public class Product {
     //Dùng biến này để xử lí các method khác
     public void discontinue(){
         this.isDiscontinue = true;
+    }
+
+    public void setCategory(Category categoryName){
+        this.category = categoryName;
     }
 }
